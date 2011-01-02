@@ -29,15 +29,42 @@ Route::get('blog', function(){
 //Menjalankan view dari controller
 Route::get('dosen', 'DosenController@index');
 
+
 //Menangkap data dari URL
-Route::get('/pegawai/{nama}', 'PegawaiController@index');
+Route::get('/dosen/{nama}', 'DosenController@index');
 
 //Menangkap data dari form
-Route::get('/formulir', 'PegawaiController@formulir');
+Route::get('/formulir','PegawaiController@formulir');
 Route::post('/formulir/proses','PegawaiController@proses');
 
-//Buat blog sederhana
+//Template blade
 Route::get('/blog','BlogController@home');
-Route::get('/blog/tentang', 'BlogController@tentang');
-Route::get('/blog/kontak', 'BlogController@kontak');
+Route::get('/blog/tentang','BlogController@tentang');
+Route::get('/blog/kontak','BlogController@kontak');
 
+
+//CRUD
+Route::get('/pegawai','PegawaiController@index');
+Route::get('/pegawai/tambah','PegawaiController@tambah');
+Route::post('/pegawai/store','PegawaiController@store');
+Route::get('/pegawai/edit/{id}','PegawaiController@edit');
+Route::post('/pegawai/update','PegawaiController@update');
+Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
+
+Route::get('/pegawai/cari','PegawaiController@cari');
+
+//CRUD Eloquent Mahasiswa
+Route::get('/mahasiswa','MahasiswaController@index');
+Route::get('/mahasiswa/tambah','MahasiswaController@tambah');
+Route::post('/mahasiswa/proses','MahasiswaController@proses');
+Route::get('/mahasiswa/edit/{id}','MahasiswaController@edit');
+Route::put('/mahasiswa/update/{id}','MahasiswaController@update');
+Route::get('/mahasiswa/hapus/{id}','MahasiswaController@hapus');
+Route::get('/mahasiswa/cari','MahasiswaController@cari');
+
+
+//CRUD Eloquent Matakuliah
+Route::get('/matakuliah','MatakuliahController@index');
+Route::get('/matakuliah/tambah','MatakuliahController@tambah');
+Route::post('/matakuliah/proses','MatakuliahController@proses');
+Route::get('/matakuliah/edit/{id}','MatakuliahController@edit');
