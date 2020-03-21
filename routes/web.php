@@ -86,4 +86,13 @@ Route::get('/article','WebController@index');
 
 
 //Relation Many To Many
-Route::get('/asu','LombaController@index');
+Route::get('/lomba','LombaController@index');
+
+
+
+
+//Login
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
