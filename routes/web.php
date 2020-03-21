@@ -89,7 +89,11 @@ Route::get('/article','WebController@index');
 Route::get('/lomba','LombaController@index');
 
 
+//Enkripsi
+Route::get('/enkripsi','LombaController@enkripsi');
 
+Route::get('/data','LombaController@data');
+Route::get('/data/{rahasia}','LombaController@data_proses');
 
 //Login
 Route::get('/home', 'HomeController@index')->name('home');
