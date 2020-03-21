@@ -6,19 +6,15 @@
 			<a href="/matakuliah">Data Mata Kuliah</a> | Framework Laravel
 		</div>
 		<div class="card-body">
-			<div class="mb-2">
-				<a href="/matakuliah/tambah" class="btn btn-primary btn-sm mr-2" role="button">Tambah</a>|
-				<a href="/matakuliah/sampah" class="btn btn-primary btn-sm" role="button">Tong Sampah</a>
-				<div style="float: right;">
-				<form class="form-inline" action="/matakuliah/cari" method="GET">
-			 		<div class="form-group">
-					  <input type="text" class="form-control form-control-sm mr-2" name="cari" value="{{ old('cari') }}">
-					</div>
-					<button type="submit" class="btn btn-primary btn-sm">Cari</button>
-			 	</form>
+			<a href="/matakuliah/restore_semua" class="btn btn-primary btn-sm mb-2">Restore Semua</a>
+			<div style="float: right;">
+			<form class="form-inline" action="/matakuliah/cari" method="GET">
+		 		<div class="form-group">
+				  <input type="text" class="form-control form-control-sm mr-2" name="cari" value="{{ old('cari') }}">
 				</div>
+				<button type="submit" class="btn btn-info btn-sm ">Cari</button>
+		 	</form>
 			</div>
-			
 			<table class="table table-striped">
 				<thead class="col">
 				<tr>
@@ -27,6 +23,7 @@
 					<th>NAMA MK</th>
 					<th>Created_at</th>
 					<th>Updated_at</th>
+					<th>Deleted_at</th>
 					<th>OPSI</th>
 		 		</tr>
 				</thead>
@@ -39,9 +36,10 @@
 		 			<td>{{ $row->nama_mk }}</td>
 		 			<td>{{ $row->created_at }}</td>
 		 			<td>{{ $row->updated_at }}</td>
+		 			<td>{{ $row->deleted_at }}</td>
 		 			<td>
-		 				<a href="/matakuliah/edit/{{ $row->id }}" class="btn btn-warning btn-sm">Edit</a>
-		 				<a href="/matakuliah/hapus/{{ $row->id }}" class="btn btn-danger btn-sm">Hapus</a>
+		 				<a href="/matakuliah/restore/{{ $row->id }}" class="btn btn-success btn-sm">Restore</a>
+		 				<a href="/matakuliah/hapus_permanen/{{ $row->id }}" class="btn btn-danger btn-sm">Hapus Permanen</a>
 		 			</td>
 		 		</tr>
 		 		@endforeach

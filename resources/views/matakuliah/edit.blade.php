@@ -7,12 +7,12 @@
 				<h3 class="text-center">Edit Mata Kuliah</h3>
 			</div>
 			<div class="card-body">
-				<form action="/matakuliah" method="POST">
+				<form action="/matakuliah/update/{{ $matakuliah->id }}" method="POST">
 			 		@csrf
 			 		@method('PUT')
 			 		<div class="form-group">
 			 			<label for="kode_mk">Kode Mata Kuliah :</label>
-						<input type="number" class="form-control" name="kode_mk" value="{{ $mahasiswa->kode_mk }}">
+						<input type="number" class="form-control" name="kode_mk" value="{{ $matakuliah->kode_mk }}">
 						@if($errors->has('kode_mk'))
                             <div class="text-danger">
                                 {{ $errors->first('kode_mk')}}

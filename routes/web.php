@@ -68,3 +68,22 @@ Route::get('/matakuliah','MatakuliahController@index');
 Route::get('/matakuliah/tambah','MatakuliahController@tambah');
 Route::post('/matakuliah/proses','MatakuliahController@proses');
 Route::get('/matakuliah/edit/{id}','MatakuliahController@edit');
+Route::put('/matakuliah/update/{id}','MatakuliahController@update');
+Route::get('/matakuliah/hapus/{id}','MatakuliahController@hapus');
+Route::get('/matakuliah/sampah','MatakuliahController@sampah');
+Route::get('/matakuliah/restore/{id}','MatakuliahController@restore');
+Route::get('/matakuliah/restore_semua','MatakuliahController@restore_semua');
+Route::get('/matakuliah/hapus_permanen/{id}','MatakuliahController@hapus_permanen');
+Route::get('/matakuliah/cari','MatakuliahController@cari');
+
+
+//Relation One To One
+Route::get('/pengguna','PenggunaController@index');
+Route::get('/pengguna/hapus/{id}','PenggunaController@hapus');
+
+//Relation One To Many
+Route::get('/article','WebController@index');
+
+
+//Relation Many To Many
+Route::get('/asu','LombaController@index');
