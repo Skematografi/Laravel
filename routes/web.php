@@ -100,3 +100,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
+
+//Upload dan Download
+Route::get('/upload','UploadController@upload');
+Route::post('/upload/proses','UploadController@proses_upload');
+
+Route::get('/upload/download/{id}','UploadController@download');
+
+Route::get('/upload/hapus/{id}','UploadController@hapus');
+
