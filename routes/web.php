@@ -109,3 +109,10 @@ Route::get('/upload/download/{id}','UploadController@download');
 
 Route::get('/upload/hapus/{id}','UploadController@hapus');
 
+//Session
+Route::get('/session','SessionController@tampil');
+Route::post('/session/buat','SessionController@buat');
+Route::get('/session/hapus','SessionController@hapus');
+
+
+Route::get('/Halaman','SessionController@error');
