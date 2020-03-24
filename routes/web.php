@@ -116,3 +116,9 @@ Route::get('/session/hapus','SessionController@hapus');
 
 
 Route::get('/Halaman','SessionController@error');
+
+//Kirim email
+Route::get('/email','EmailController@index');
+
+Route::get('/email/form','EmailController@form_email');
+Route::post('/email/kirim','EmailController@send');
